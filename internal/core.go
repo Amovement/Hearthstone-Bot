@@ -32,14 +32,14 @@ func (b *Bot) Start() {
 		fmt.Println("开始比赛..")
 		win.MockClick(b.hwnd, 495, 327)
 
-		fmt.Println("静待 10 秒..")
-		time.Sleep(time.Second * 10)
+		fmt.Println("静待 20 秒..")
+		time.Sleep(time.Second * 20)
 		fmt.Println("选择角色..")
 		win.ShowAndTopWindow(b.hwnd)
 		win.MockClick(b.hwnd, 500, 329)
 
-		fmt.Println("静待 20 秒..")
-		time.Sleep(time.Second * 20)
+		fmt.Println("静待 30 秒..")
+		time.Sleep(time.Second * 30)
 
 		fmt.Println("结束选牌")
 		win.MockClick(b.hwnd, 350, 317)
@@ -76,14 +76,14 @@ func (b *Bot) Surrender() {
 	win.MockClickWithoutOffset(b.hwnd, 677, 384)
 	// b.heartStop()
 	win.MockClickWithoutOffset(b.hwnd, 350, 160)
-	fmt.Println("静待五秒...")
-	time.Sleep(5)
+	fmt.Println("静待20秒...")
+	time.Sleep(20)
 	// 随便找两个地方点两下
 	fmt.Println("随便找两个地方点两下.. ")
 	x := utils.Rand(100, 700)
 	y := utils.Rand(100, 400)
 	win.MockClick(b.hwnd, x, y)
 	win.HideWindow(b.hwnd)
-	fmt.Println("静待十秒...")
-	time.Sleep(10)
+	fmt.Println("静待20秒...")
+	time.Sleep(20)
 }
