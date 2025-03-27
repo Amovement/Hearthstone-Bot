@@ -44,7 +44,7 @@ func (b *Bot) Start() {
 		fmt.Println("结束选牌")
 		win.MockClick(b.hwnd, 350, 317)
 
-		b.heartStop() // 隐藏界面 开始挂机
+		b.heartStop() // 开始挂机
 
 		myTurn := utils.Rand(1, 4)
 		for ; myTurn > 0; myTurn-- {
@@ -63,11 +63,10 @@ func (b *Bot) Start() {
 
 // heartStop 后台隐藏挂机
 func (b *Bot) heartStop() {
-	fmt.Println("隐藏界面开始挂机..", time.Now().Format("2006-01-02 15:04:05"))
-	win.HideWindow(b.hwnd)
-	time.Sleep(3 * time.Minute)
+	//fmt.Println("隐藏界面开始挂机..", time.Now().Format("2006-01-02 15:04:05"))
+	//win.HideWindow(b.hwnd)
+	time.Sleep(5 * time.Minute)
 	win.ShowAndTopWindow(b.hwnd)
-	time.Sleep(3 * time.Second)
 }
 
 func (b *Bot) Surrender() {
@@ -83,7 +82,7 @@ func (b *Bot) Surrender() {
 	x := utils.Rand(100, 700)
 	y := utils.Rand(100, 400)
 	win.MockClick(b.hwnd, x, y)
-	win.HideWindow(b.hwnd)
+	//win.HideWindow(b.hwnd)
 	fmt.Println("静待20秒...")
 	time.Sleep(20)
 }
